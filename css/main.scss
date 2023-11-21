@@ -1,0 +1,69 @@
+@mixin mobile {
+    @media screen and (max-width: 785px) {
+        @content;
+    }
+}
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --x: 0%;
+    --y: 0%;
+}
+
+/* MAIN */
+
+body {
+    min-height: 100vh;
+    background-color: #CAD3DA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.container {
+    display: flex;
+
+    @include mobile {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image {
+        max-height: 420px;
+        border-radius: 6px;
+        box-shadow: 3px 3px 5px rgba(0,0,0,.1);
+        cursor: zoom-in;
+
+        @include mobile {
+            max-height: 230px;
+        }
+    }
+
+    .lens {
+        visibility: hidden;
+        margin-left: 14px;
+        width: 230px;
+        height: 230px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        box-shadow: 3px 3px 5px rgba(0,0,0,.1);
+        background: url("../img.jpg") no-repeat var(--x) var(--y);
+        background-size: 560%;
+
+        
+        @include mobile {
+            visibility: visible;
+            transition: .25s;
+            margin-left: 0;
+            margin-top: 16px;
+        }
+    }
+}

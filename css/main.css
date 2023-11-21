@@ -1,0 +1,85 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --x: 0%;
+  --y: 0%;
+}
+
+/* MAIN */
+body {
+  min-height: 100vh;
+  background-color: #CAD3DA;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 0 1rem;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (max-width: 785px) {
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.container .image {
+  max-height: 420px;
+  border-radius: 6px;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  cursor: -webkit-zoom-in;
+  cursor: zoom-in;
+}
+
+@media screen and (max-width: 785px) {
+  .container .image {
+    max-height: 230px;
+  }
+}
+
+.container .lens {
+  visibility: hidden;
+  margin-left: 14px;
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+  background: url("../img.jpg") no-repeat var(--x) var(--y);
+  background-size: 560%;
+}
+
+@media screen and (max-width: 785px) {
+  .container .lens {
+    visibility: visible;
+    -webkit-transition: .25s;
+    transition: .25s;
+    margin-left: 0;
+    margin-top: 16px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
